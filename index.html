@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Strains - L'Encyclopédie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (Encoded SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px),
+                              linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        .btn-software {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-software:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+            border-color: #000;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen relative overflow-x-hidden">
+
+    <!-- Background Grid Decoration -->
+    <div class="absolute inset-0 grid-bg -z-10 h-[80vh]"></div>
+
+    <!-- Navigation -->
+    <nav class="w-full px-8 py-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center gap-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            <span class="font-bold tracking-tight text-lg">BIBLE STRAINS</span>
+        </div>
+        <div class="text-sm font-medium text-gray-500">v1.0.0</div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-6 text-center max-w-4xl mx-auto mt-10 mb-16">
+        
+        <!-- Badge -->
+        <div class="fade-in-up mb-6 inline-flex items-center px-3 py-1 rounded-full border border-gray-200 bg-white text-xs font-medium text-gray-600 uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-black mr-2 animate-pulse"></span>
+            Base de données active
+        </div>
+
+        <!-- Headline -->
+        <h1 class="fade-in-up delay-100 text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+            L'art de la botanique <br/>
+            <span class="text-gray-400">numérique.</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="fade-in-up delay-200 text-lg text-gray-600 mb-10 max-w-2xl leading-relaxed">
+            Accédez à une encyclopédie exhaustive regroupant des centaines de variétés. 
+            Analysez les terpènes, comparez les effets et découvrez les nuances génétiques 
+            dans une interface conçue pour la clarté.
+        </p>
+
+        <!-- CTA Button -->
+        <button onclick="openApp()" class="fade-in-up delay-300 btn-software group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-black rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+            Lancer l'Application
+            <svg class="w-5 h-5 ml-2 -mr-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </button>
+
+    </main>
+
+    <!-- Featured Strains Section -->
+    <section class="w-full max-w-7xl mx-auto px-6 mb-24 fade-in-up delay-400">
+        <div class="flex items-center justify-between mb-8 border-b border-gray-100 pb-4">
+            <h2 class="text-sm font-bold uppercase tracking-widest text-gray-400">Spécimens en vedette</h2>
+            <span class="text-xs font-mono text-gray-300">EXTRAIT DE LA DB</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Card 1: Acapulco Gold (Sativa) -->
+            <div class="card-hover bg-white border border-gray-200 p-6 rounded-xl flex flex-col justify-between h-64 cursor-default">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl tracking-tight">Acapulco Gold</h3>
+                        <span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Sativa</span>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-black font-mono text-sm">4.5</span>
+                        <div class="flex text-black text-[10px]">★★★★☆</div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-snug line-clamp-3">
+                        Une des variétés les plus connues, comparée à un dîner dans un restaurant 5 étoiles. Originaire de la région d'Acapulco, Mexique.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Happy</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Euphoric</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Energetic</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Afghani (Indica) -->
+            <div class="card-hover bg-white border border-gray-200 p-6 rounded-xl flex flex-col justify-between h-64 cursor-default">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl tracking-tight">Afghani</h3>
+                        <span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Indica</span>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-black font-mono text-sm">4.3</span>
+                        <div class="flex text-black text-[10px]">★★★★☆</div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-snug line-clamp-3">
+                        Une Indica lourde nommée d'après son origine géographique. Délivre une relaxation profonde et sédative avec un arôme terreux.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Relaxed</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Sleepy</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Earthy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: AK-47 (Hybrid) -->
+            <div class="card-hover bg-white border border-gray-200 p-6 rounded-xl flex flex-col justify-between h-64 cursor-default">
+                <div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl tracking-tight">AK-47</h3>
+                        <span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">Hybrid</span>
+                    </div>
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="text-black font-mono text-sm">4.2</span>
+                        <div class="flex text-black text-[10px]">★★★★☆</div>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-snug line-clamp-3">
+                        Ne vous fiez pas à son nom intense : AK-47 vous laissera détendu et apaisé. Un mélange complexe de saveurs et d'effets.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Happy</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Relaxed</span>
+                        <span class="text-xs border border-gray-200 px-2 py-1 rounded text-gray-500">Creative</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="w-full bg-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-start space-y-4">
+                <div class="p-3 bg-white/10 rounded-lg">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold">Données Structurées</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Une liste massive triée par nom, type (Indica, Sativa, Hybride) et note globale. Une vue d'ensemble claire et précise.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex flex-col items-start space-y-4">
+                <div class="p-3 bg-white/10 rounded-lg">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold">Profils Chimiques</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Explorez les effets (Euphoric, Relaxed, Creative) et les saveurs dominantes pour trouver la variété correspondant à vos besoins.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex flex-col items-start space-y-4">
+                <div class="p-3 bg-white/10 rounded-lg">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold">Recherche Instantanée</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Un moteur de recherche ultra-rapide intégré pour filtrer instantanément parmi des milliers d'entrées sans rechargement.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 border-t border-gray-100 text-center">
+        <p class="text-xs text-gray-400 font-mono">© 2026 BIBLE STRAINS SYSTEM. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        function openApp() {
+            const width = 1280;
+            const height = 800;
+            const left = (screen.width / 2) - (width / 2);
+            const top = (screen.height / 2) - (height / 2);
+            
+            window.open(
+                'biblestrains.html', 
+                'BibleStrainsApp', 
+                `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no,toolbar=no,menubar=no,location=no`
+            );
+        }
+    </script>
+</body>
+</html>
